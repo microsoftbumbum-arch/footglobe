@@ -28,11 +28,13 @@ jobs:
 
           mkdir -p public components/retro
           BASE='https://footglobe.discloud.app'
-          for file in earth-day.jpg favicon.ico favicon-512.png favicon-192.png brand-mark.png apple-touch-icon.png footglobe-social-preview.png retro-goal-announcement.mp3; do
+
+          for file in earth-day.jpg favicon.ico favicon-512.png favicon-192.png brand-mark.png apple-touch-icon.png footglobe-social-preview.png; do
             curl --fail --location --retry 5 --retry-delay 2 "$BASE/$file" --output "public/$file"
           done
 
-          python3 - <<'PY'
+          if curl --fail --location --retry 2 --retry-delay 1 "$BASE/retro-goal-announcement.mp3" --output public/retro-goal-announcement.mp3; then
+            python3 - <<'PY'
           from pathlib import Path
           import base64, textwrap
           mp3 = Path('public/retro-goal-announcement.mp3').read_bytes()
@@ -42,6 +44,16 @@ jobs:
           out = '''"use client";\n\n// Embedded copy of the retro goal announcement so playback remains available\n// even when a static asset request is unavailable.\nexport const RETRO_GOAL_AUDIO_DATA_URL = [\n''' + lines + '''\n].join("").replace(/^/, "data:audio/mpeg;base64,");\n'''
           Path('components/retro/retro-goal-audio-data.ts').write_text(out, encoding='utf-8')
           PY
+          else
+            rm -f public/retro-goal-announcement.mp3
+            cat > components/retro/retro-goal-audio-data.ts <<'EOF'
+          "use client";
+
+          // The source deployment no longer exposes the original MP3.
+          // Keep the module available so the repository remains buildable.
+          export const RETRO_GOAL_AUDIO_DATA_URL = "";
+          EOF
+          fi
 
           npm install --package-lock-only --ignore-scripts --no-audit --no-fund
 
