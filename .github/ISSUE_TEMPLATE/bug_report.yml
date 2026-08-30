@@ -1,0 +1,59 @@
+name: Bug report
+description: Report something that is not working correctly
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve FootGlobe. Do not include API keys, tokens or private credentials.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected instead.
+      placeholder: Tell us what you saw.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. See ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - 3D globe
+        - Today's matches
+        - Retro mode
+        - Match details
+        - Search
+        - Theme / language
+        - Broadcasts / highlights
+        - Donations
+        - API / server
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Browser / device
+      placeholder: "Example: Chrome 140, Android 15"
+
+  - type: textarea
+    id: extras
+    attributes:
+      label: Additional context
+      description: Add screenshots or logs with secrets removed.

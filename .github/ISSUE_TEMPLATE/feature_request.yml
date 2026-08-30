@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest an improvement for FootGlobe
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Feature
+      description: What would you like FootGlobe to add or improve?
+    validations:
+      required: true
+
+  - type: textarea
+    id: value
+    attributes:
+      label: Why would this be useful?
+      description: Explain the problem or experience this would improve.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - 3D globe
+        - Today's matches
+        - Retro mode
+        - Search / discovery
+        - Match details
+        - Internationalization
+        - Performance
+        - Accessibility
+        - Other
+    validations:
+      required: true
