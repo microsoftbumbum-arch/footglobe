@@ -1,0 +1,23 @@
+name: Temporary repository snapshot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/snapshot-temp.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Upload source snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: footglobe-current-source
+          path: .
+          include-hidden-files: true
+          retention-days: 1
