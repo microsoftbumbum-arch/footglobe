@@ -1,0 +1,59 @@
+name: Finalize FootGlobe v9
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.bootstrap-v9/**'
+      - 'public/retro-goal-announcement.mp3'
+      - '.github/workflows/finalize-v9.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Apply current FootGlobe source
+        shell: bash
+        run: |
+          set -euo pipefail
+          gzip -dc .bootstrap-v9/update.patch.gz | git apply -p2 --whitespace=nowarn
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import base64, textwrap
+
+          mp3 = Path('public/retro-goal-announcement.mp3').read_bytes()
+          encoded = base64.b64encode(mp3).decode('ascii')
+          chunks = textwrap.wrap(encoded, 160)
+          lines = '\n'.join(f'  "{chunk}",' for chunk in chunks)
+          out = (
+              '"use client";\n\n'
+              '// The Retro goal announcement is embedded so playback does not depend on a\n'
+              '// static-file request succeeding on the production host. Generated from the\n'
+              '// exact MP3 supplied by the user.\n'
+              'export const RETRO_GOAL_AUDIO_DATA_URL = [\n'
+              + lines
+              + '\n].join("").replace(/^/, "data:audio/mpeg;base64,");\n'
+          )
+          Path('components/retro/retro-goal-audio-data.ts').write_text(out, encoding='utf-8')
+          PY
+
+          rm -rf .bootstrap-v9
+
+      - name: Publish refreshed repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'feat: refresh FootGlobe from current source'
+          git push origin HEAD:main
