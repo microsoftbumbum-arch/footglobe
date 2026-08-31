@@ -1,18 +1,18 @@
-## What changed?
+## Summary
 
-<!-- Describe the change clearly. -->
+<!-- What does this change? -->
 
-## Why?
+## Why
 
-<!-- Explain the problem or goal. -->
+<!-- What problem does it solve? -->
 
-## Testing
+## Verification
 
-- [ ] `npm run lint`
-- [ ] `npm test`
-- [ ] Tested relevant UI on mobile when applicable
-- [ ] No secrets or `.env` files were added
+- [ ] I tested the affected flow.
+- [ ] I checked mobile behavior if UI changed.
+- [ ] I did not commit secrets or `.env` files.
+- [ ] I updated tests or documentation when appropriate.
 
-## Visual changes
+## Screenshots
 
-<!-- Add screenshots or recordings when the UI changed. -->
+<!-- Add before/after screenshots for visual changes. -->

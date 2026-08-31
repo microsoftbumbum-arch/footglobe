@@ -2,49 +2,56 @@
 
 Thanks for helping improve FootGlobe.
 
-## Before opening a pull request
+## Before you start
 
-1. Fork the repository and create a focused branch.
-2. Keep changes scoped to one bug, feature, or cleanup.
-3. Do not commit `.env` files, API keys, tokens, credentials or user data.
-4. Run the repository checks when possible:
+1. Open an issue for large changes so the direction can be discussed first.
+2. Never commit `.env`, access tokens, API keys, webhook URLs or private credentials.
+3. Keep changes focused. Avoid unrelated formatting or dependency churn.
+4. Preserve mobile behavior, internationalization and both light/dark themes.
+
+## Development
 
 ```bash
 npm ci
+npm run dev
+```
+
+Useful checks:
+
+```bash
 npm run lint
+npm run build
 npm test
 ```
 
-5. Update documentation when behavior, configuration or public APIs change.
-
-## Branch naming
-
-Examples:
-
-```text
-feat/retro-improvements
-fix/globe-mobile-rotation
-fix/match-details
-chore/dependency-update
-```
-
-## Commit messages
-
-Short, descriptive commits are preferred:
-
-```text
-feat: improve retro goal center
-fix: prevent duplicate broadcast channels
-chore: update dependencies
-```
+Some integrations require environment variables and external services. Use `.env.example` as the reference and keep real values local.
 
 ## Pull requests
 
-A good pull request should explain:
+A good PR should include:
 
-- what changed;
-- why the change was needed;
-- how it was tested;
-- screenshots or recordings for visible UI changes.
+- a concise summary of the change;
+- why the change is needed;
+- screenshots for meaningful visual changes;
+- notes about mobile behavior when UI was touched;
+- tests or a clear manual verification path for logic changes;
+- no generated caches, build output or local environment files.
 
-Please avoid unrelated formatting or refactors in the same pull request.
+## Project conventions
+
+- TypeScript for application code.
+- Reuse existing FootGlobe components and visual tokens before creating new patterns.
+- Keep secrets server-side.
+- Use locale keys for user-facing text that belongs in the translated product surface.
+- Treat the 3D globe as a performance-sensitive component.
+- Preserve public profile URL compatibility and reserved-route protections.
+
+## Commit messages
+
+Prefer short conventional-style messages, for example:
+
+```text
+feat: add profile achievement section
+fix: sync shop reset to UTC
+chore: refresh project docs
+```

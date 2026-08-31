@@ -27,9 +27,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# environment files
+# env files (can opt-in for committing if needed)
 .env*
-!.env.example
 
 # vercel
 .vercel
@@ -45,3 +44,8 @@ next-env.d.ts
 
 # runtime cache
 /.cache/
+
+# runtime visitor counter database
+/data/*.sqlite
+/data/*.sqlite-shm
+/data/*.sqlite-wal
