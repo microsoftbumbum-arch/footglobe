@@ -7,8 +7,8 @@
 
   Explore os jogos de hoje em um globo 3D interativo, entre em uma experiência Retrô histórica, descubra transmissões e highlights e navegue pelo futebol país por país.
 
-  [![Site](https://img.shields.io/badge/Abrir-Site-00AEEF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://footglobe.discloud.app)
-  [![X](https://img.shields.io/badge/@emannoel0-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/emannoel0)
+  [![Site](https://img.shields.io/badge/Abrir-Site-00AEEF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://footglobe.online)
+  [![X](https://img.shields.io/badge/@FootGlobeLive-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/FootGlobeLive)
 
   ![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
   ![React](https://img.shields.io/badge/React-19-20232A?style=flat-square&logo=react&logoColor=61DAFB)
@@ -21,7 +21,7 @@
 
 <br />
 
-<img src="./public/footglobe-social-preview.png" alt="FootGlobe — Follow Football Across the Globe" width="100%" />
+<img src="./public/footglobe-social-preview.webp" alt="FootGlobe — Follow Football Across the Globe" width="100%" />
 
 ## Sobre o projeto
 
@@ -184,6 +184,6 @@ Bugs, ideias e pull requests são bem-vindos. Leia [`CONTRIBUTING.md`](./CONTRIB
   <strong>FootGlobe</strong><br />
   Futebol mapeado no mundo.
   <br /><br />
-  <a href="https://footglobe.discloud.app">Abrir FootGlobe</a> ·
-  <a href="https://x.com/emannoel0">@emannoel0</a>
+  <a href="https://footglobe.online">Abrir FootGlobe</a> ·
+  <a href="https://x.com/FootGlobeLive">@FootGlobeLive</a>
 </div>

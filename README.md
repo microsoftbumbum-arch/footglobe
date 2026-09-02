@@ -7,8 +7,8 @@
 
   Explore today's matches on an interactive 3D Earth, jump into a historical Retro experience, discover broadcasts and highlights, and follow football country by country.
 
-  [![Live Demo](https://img.shields.io/badge/Live-Demo-00AEEF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://footglobe.discloud.app)
-  [![X](https://img.shields.io/badge/@emannoel0-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/emannoel0)
+  [![Live Demo](https://img.shields.io/badge/Live-Demo-00AEEF?style=for-the-badge&logo=googlechrome&logoColor=white)](https://footglobe.online)
+  [![X](https://img.shields.io/badge/@FootGlobeLive-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/FootGlobeLive)
 
   ![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)
   ![React](https://img.shields.io/badge/React-19-20232A?style=flat-square&logo=react&logoColor=61DAFB)
@@ -22,7 +22,7 @@
 
 <br />
 
-<img src="./public/footglobe-social-preview.png" alt="FootGlobe — Follow Football Across the Globe" width="100%" />
+<img src="./public/footglobe-social-preview.webp" alt="FootGlobe — Follow Football Across the Globe" width="100%" />
 
 ## About
 
@@ -211,6 +211,6 @@ Please do not publish API keys, tokens or payment credentials in issues, pull re
   <strong>FootGlobe</strong><br />
   Football, mapped to the world.
   <br /><br />
-  <a href="https://footglobe.discloud.app">Live site</a> ·
-  <a href="https://x.com/emannoel0">@emannoel0</a>
+  <a href="https://footglobe.online">Live site</a> ·
+  <a href="https://x.com/FootGlobeLive">@FootGlobeLive</a>
 </div>
